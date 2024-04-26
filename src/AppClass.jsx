@@ -27,7 +27,7 @@ export default class AppClass extends Component{
   }
 
   render(){
-    let imgArray = this.imageData();
+    let image_arr = this.imageData();
     return(
     <>
       <h1>Gallery</h1>
