@@ -1,5 +1,6 @@
 import './App.css';
 import elephant from "./images/elephant.jpeg";
+
 const imageData = ()=>{
   let data = [
     {
@@ -9,36 +10,38 @@ const imageData = ()=>{
     {
       id:2,
       img:elephant
-    },
+    },                  
     {
-      id:3,
-      img:elephant
-    },
+      id:3,   
+      img:elephant              
+    },      
     {
       id:4,
-      img:elephant
+      img:elephant      
     }
   ]
   return data;
 }
 
 function App() {
-  // code here
-
-  let image_arr = imageData()
-
+  let image_arr = imageData();
+  console.log(image_arr)
 
   return(
-    <div id='main'>
+    <>
       <h1>Kalvium Gallery</h1>
-      <div className='parent_div'>
-        <img src={image_arr[0].img} className='image' id='image' alt="" />
-        <img src={image_arr[1].img} className='image' id='image' alt="" />
-        <img src={image_arr[2].img} className='image' id='image' alt="" />
-        <img src={image_arr[3].img} className='image' id='image' alt="" />
+      <div className='parent-div'>
+        {
+          image_arr.map( elem =>{
+            return(
+              <img src={elem.img} className='image' alt='elephant' />
+            )
+          })
+        }
       </div>
-    </div>
+    </>
   )
+
 }
 
 export default App;
